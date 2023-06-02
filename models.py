@@ -1,9 +1,10 @@
+import datetime
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float, Boolean
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from session import engine
 
-
-Base = declarative_base(engine)
+Base = declarative_base()
+Base.bind = engine
 
 
 class Category(Base):
@@ -212,3 +213,4 @@ class Country(Base):
 
     def __str__(self):
         return f'City: {self.country}'
+

@@ -1,13 +1,10 @@
-from sqlalchemy.exc import IntegrityError
-
-from models import Base, Category, FilmCategory, Film, Language, Inventory, Rental, FilmActor, Actor, Customer, Payment, \
-    Staff, Address, City, Country, Store
-
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import Base
 
 def main():
-    # create all tables
-    Base.metadata.create_all()
-
+    engine = create_engine("mysql+pymysql://root:PotuS!3210@localhost:3306/DVD_STORE")
+    Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":
     main()
