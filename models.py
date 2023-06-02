@@ -209,5 +209,6 @@ class Country(Base):
     country = Column(String(50), nullable=False)
     last_update = Column(DateTime, onupdate=True)
 
+
     def __str__(self):
         return f'City: {self.country}'
