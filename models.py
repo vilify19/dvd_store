@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from session import engine
 
 
-Base = declarative_base(bind=engine)
+Base = declarative_base(engine)
 
 
 class Category(Base):

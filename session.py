@@ -3,9 +3,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 engine = create_engine(
-    "mysql+pymysql://root:PotuS!3210@localhost:3306/blog"
+    "mysql+pymysql://root:PotuS!3210@localhost:3306/DVD_STORE"
 )
 
 
-Session = sessionmaker(bind=engine) # klasa
+Session = sessionmaker(engine) # klasa
 session = Session() # instancja klasy
